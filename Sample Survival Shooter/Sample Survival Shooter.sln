@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{E59E6876-8F24-4DED-5974-D39F28822756}") = "Sample Survival Shooter", "Assembly-CSharp.csproj", "{1095FA85-10F5-3248-4B4F-1DA3D7AD850C}"
+EndProject
+Project("{E59E6876-8F24-4DED-5974-D39F28822756}") = "Sample Survival Shooter", "Assembly-CSharp-Editor.csproj", "{DD1EC75A-4B42-D6B5-3D74-2B3A59F36A7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1095FA85-10F5-3248-4B4F-1DA3D7AD850C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1095FA85-10F5-3248-4B4F-1DA3D7AD850C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1095FA85-10F5-3248-4B4F-1DA3D7AD850C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1095FA85-10F5-3248-4B4F-1DA3D7AD850C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD1EC75A-4B42-D6B5-3D74-2B3A59F36A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1EC75A-4B42-D6B5-3D74-2B3A59F36A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1EC75A-4B42-D6B5-3D74-2B3A59F36A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1EC75A-4B42-D6B5-3D74-2B3A59F36A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
