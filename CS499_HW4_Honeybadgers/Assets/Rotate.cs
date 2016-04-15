@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Rotate : MonoBehaviour {
     [Range(0,100)]

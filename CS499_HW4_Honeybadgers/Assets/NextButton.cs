@@ -10,36 +10,29 @@ public class NextButton : MonoBehaviour {
     }
     void On_Click()
     {
-        Debug.Log("BLAH");
         Ray r = FindObjectOfType<CardboardHead>().Gaze;
         Debug.DrawRay(r.origin, r.direction, Color.blue, 1000000);
         RaycastHit hit;
-        if (Physics.Raycast(r, out hit) && hit.collider.name.Equals("NextButton"))
+        if (Physics.Raycast(r, out hit) && hit.collider.name.Equals("NextButton")) //if the raycast hit anything AND it's next button
         {
-            GameObject tempButton = GameObject.Find("NextButton");
-            GetComponent<Renderer>().material.color = Color.blue;
-            PokemonController nextPokemon = FindObjectOfType<PokemonController>();
-            int nextPokeCounter = nextPokemon.getCounter();
-            nextPokemon.nextPokemon();
-            Debug.Log("Counter in nextbutton is: "  + nextPokeCounter);
+            GetComponent<Renderer>().material.color = Color.blue; //then turn it blue
+            PokemonController nextPokemon = FindObjectOfType<PokemonController>(); 
+            nextPokemon.nextPokemon(); //and switch to the next pokemon
         }
     }
     void Update()
     {
         Cardboard.SDK.UpdateState();
-        Pose3D head = Cardboard.SDK.HeadPose;
         Ray r = FindObjectOfType<CardboardHead>().Gaze;
         Debug.DrawRay(r.origin, r.direction, Color.blue, 1);
         RaycastHit hit;
-        if (Physics.Raycast(r, out hit) && hit.collider.name.Equals("NextButton"))
+        if (Physics.Raycast(r, out hit) && hit.collider.name.Equals("NextButton")) //if the raycast hit anything AND it's next button (this is the hover over part)
         {
-            GameObject tempButton = GameObject.Find("NextButton");
-            GetComponent<Renderer>().material.color = Color.yellow;
+            GetComponent<Renderer>().material.color = Color.yellow; //then change it's color to yellow
         }
         else
         {
-            GameObject tempButton = GameObject.Find("NextButton");
-            GetComponent<Renderer>().material.color = Color.grey;
+            GetComponent<Renderer>().material.color = Color.grey; //otherwise, there are no important intersections, change it's color to grey
         }
     }
 }

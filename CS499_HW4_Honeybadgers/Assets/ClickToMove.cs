@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class ClickToMove : MonoBehaviour {
     public Transform objToMove;
 	// Use this for initialization
 	void Start () {
         Cardboard.SDK.OnTrigger += On_Click;
-    }
+	}
     void On_Click() {
         Debug.Log("triggered");
         Ray r = GetComponentInChildren<CardboardHead>().Gaze;
@@ -21,7 +22,6 @@ public class ClickToMove : MonoBehaviour {
     void Update()
     {
         Cardboard.SDK.UpdateState();
-        Pose3D head = Cardboard.SDK.HeadPose;
         Ray r = GetComponentInChildren<CardboardHead>().Gaze;
         Debug.DrawRay(r.origin, r.direction, Color.blue, 1);
 

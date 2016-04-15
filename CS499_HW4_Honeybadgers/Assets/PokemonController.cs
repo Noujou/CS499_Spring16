@@ -4,21 +4,24 @@ using System.Collections;
 public class PokemonController : MonoBehaviour
 {
 
-    GameObject currentPokemon;
-    public GameObject[] Pokemon;
-    protected int counter;
-    int waitTimeCounter;
+    GameObject currentPokemon; //the current pokemon or spinning pikachu
+    public GameObject[] Pokemon; //the array containing all the pokemon
+    int counter; //the counter, keeping track of which pokemon you're on
 
     // Use this for initialization
     void Start()
     {
-        currentPokemon = GameObject.Find("Pikachu");
-        Pokemon = new GameObject[4];
-        counter = 0;
+        currentPokemon = GameObject.Find("Pikachu"); //sets the spinning pikachu to the current pokemon
+        Pokemon = new GameObject[4]; //declares the pokemon array to be a GameObject array of length 4
+        counter = 0; //sets the counter to start at zero, the pikachu
         
         InstantiatePokemon();
     }
 
+    /*****************************************
+    *Instantiates all the Prefab Pokemon into the Pokemon array, and then takes the current position and initial rotation of the Spinning Pikachu
+    *and sets it to all the Prefab Pokemon in the Pokemon array, and then sets them to Invisible (SetActive = false) 
+    *****************************************/
     void InstantiatePokemon()
     {
         Pokemon[0] = (GameObject)Instantiate(Resources.Load("Prefabs/Pikachu"));
@@ -42,15 +45,13 @@ public class PokemonController : MonoBehaviour
         Pokemon[3].SetActive(false);
     }
 
-    public int getCounter()
-    {
-        return counter;
-    }
-
+    /*
+    *Next Pokemon goes in the order of:
+    * 0 -> 1 -> 2 -> 3 -> 0
+    * when a pokemon gets called, the one prior to it, gets set invisible, the current one gets shown and the counter advances
+    */
     public void nextPokemon()
     {
-        Debug.Log("counter is: " + counter);
-
         if (counter >= 3)
         {
             Pokemon[counter-1].SetActive(false);
@@ -73,19 +74,22 @@ public class PokemonController : MonoBehaviour
         }
     }
 
+    /*
+    *Previous Pokemon goes in the order of:
+    * 0 -> 3 -> 2 -> 1 -> 0
+    * when a pokemon gets called, the one prior to it, gets set invisible, the current one gets shown and the counter advances
+    */
     public void prevPokemon()
     {
-        Debug.Log("counter is: " + counter);
-
         if (counter <= 0)
         {
-            Pokemon[counter].SetActive(false);
-            counter = 3;
+            Pokemon[counter+1].SetActive(false);
             Pokemon[counter].SetActive(true);
+            counter = 3;
         }
         else
         {
-            if (counter == 1)
+            if (counter == 3)
             {
                 Pokemon[0].SetActive(false);
             }
@@ -93,7 +97,6 @@ public class PokemonController : MonoBehaviour
             {
                 Pokemon[counter + 1].SetActive(false);
             }
-
             Pokemon[counter].SetActive(true);
             counter--;
         }
@@ -103,35 +106,7 @@ public class PokemonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (waitTimeCounter > Time.deltaTime * 10000)
-        //{
-
-        //    if (counter >= 4)
-        //    {
-        //        Pokemon[counter - 1].SetActive(false);
-        //        counter = 0;
-        //        Pokemon[counter].SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        if (counter == 0)
-        //        {
-        //            Pokemon[3].SetActive(false);
-        //        }
-        //        else
-        //        {
-        //            Pokemon[counter - 1].SetActive(false);
-        //        }
-
-        //        Pokemon[counter].SetActive(true);
-        //        counter++;
-        //    }
-        //    waitTimeCounter = 0;
-        //}
-        //else
-        //    waitTimeCounter++;
-
-        //Debug.Log("waitTime is: " + Time.deltaTime * 10000);
+        //nothing ;(
     }
 
 }
