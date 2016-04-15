@@ -63,7 +63,7 @@ public abstract class FingerBehaviour : MonoBehaviour {
 
     protected void FingerUpdate()
     {
-        Color RandomColor = new Color(Random.value, Random.value, Random.value); //each tick is a random color
+        //Color RandomColor = new Color(Random.value, Random.value, Random.value); //each tick is a random color
 
         Ray r = fingerRay;
         RaycastHit hit;
