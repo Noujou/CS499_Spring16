@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample TPS Shooter.CSharp", "Sample TPS Shooter.CSharp.csproj", "{67B0D4B2-212F-9DDA-0021-A7662D543536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample TPS Shooter.CSharp.Editor", "Sample TPS Shooter.CSharp.Editor.csproj", "{F218A999-46FC-8E02-BAC8-D3FFF95E7BAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67B0D4B2-212F-9DDA-0021-A7662D543536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B0D4B2-212F-9DDA-0021-A7662D543536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B0D4B2-212F-9DDA-0021-A7662D543536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B0D4B2-212F-9DDA-0021-A7662D543536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F218A999-46FC-8E02-BAC8-D3FFF95E7BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F218A999-46FC-8E02-BAC8-D3FFF95E7BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F218A999-46FC-8E02-BAC8-D3FFF95E7BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F218A999-46FC-8E02-BAC8-D3FFF95E7BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
