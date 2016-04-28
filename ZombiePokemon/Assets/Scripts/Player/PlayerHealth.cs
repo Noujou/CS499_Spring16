@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
 
     public int startingHealth = 100;
-    public int currentHealth;
+    public int currentHealth = 0;
 
     bool isDead;
     bool damaged;
@@ -14,11 +13,6 @@ public class PlayerHealth : MonoBehaviour {
         currentHealth = startingHealth;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void TakeDamage(int damage)
     {
         damaged = true;
