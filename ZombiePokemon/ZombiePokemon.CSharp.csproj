@@ -96,13 +96,13 @@
     <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardAndroidDevice.cs" />
     <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardiOSDevice.cs" />
     <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
+    <Compile Include="Assets\Scripts\Managers\PokemonManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
     <Compile Include="Assets\Scripts\Pokemon\PokemonAttack.cs" />
     <Compile Include="Assets\Scripts\Pokemon\PokemonHealth.cs" />
     <Compile Include="Assets\Scripts\Pokemon\PokemonMovement.cs" />
-    <Compile Include="Assets\Scripts\PokemonManager.cs" />
-    <Compile Include="Assets\Scripts\Rotate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />

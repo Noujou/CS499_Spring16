@@ -3,10 +3,11 @@ using System.Collections;
 
 public class PokemonAttack : MonoBehaviour {
 
-    public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
+    public float timeBetweenAttacks = 0.7f;     // The time in seconds between each attack.
     public int attackDamage = 10;               // The amount of health taken away per attack.
 
     GameObject player;                          // Reference to the player GameObject.
+    PlayerShooting shotValue;
     PlayerHealth playerHealth;                  // Reference to the player's health.
     PokemonHealth pokemonHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
@@ -17,13 +18,22 @@ public class PokemonAttack : MonoBehaviour {
         // Setting up the references.
         player = GameObject.Find("CardboardMain");
         playerHealth = player.GetComponent<PlayerHealth>();
+        shotValue = player.GetComponent<PlayerShooting>();
         pokemonHealth = GetComponent<PokemonHealth>();
     }
 
+    //So, I don't like that I had to do this, but honestly I can't think of any other way...for some reason this collision worked for the projectile collision detection
+    //So, I just went with it
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
         Debug.Log("other's gameobject is: " + other.name);
+        if (other.gameObject.tag.Equals("Bullet"))
+        {
+            pokemonHealth.TakeDamage(shotValue.shotDamage);
+            Destroy(other.gameObject);
+        }
+
         if (other.gameObject == player)
         {
             // ... the player is in range.

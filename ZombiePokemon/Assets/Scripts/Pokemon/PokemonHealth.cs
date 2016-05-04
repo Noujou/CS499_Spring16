@@ -35,6 +35,7 @@ public class PokemonHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
+        ScoreManager.score += scoreValue;
         Destroy(gameObject, 0.5f);
     }
 }
