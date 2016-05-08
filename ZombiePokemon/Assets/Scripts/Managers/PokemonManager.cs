@@ -10,16 +10,11 @@ public class PokemonManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        spawnAudio = GetComponent<AudioSource>();
+        spawnAudio = GetComponent<AudioSource>(); //gets the reference to the audio source
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+        InvokeRepeating("Spawn", spawnTime, spawnTime); //keeps calling Spawn every "x" secions, where x is the repeat rate.
     }
 	
-	// Update is called once per frame
-	void Update () {
-	 //nothing =(   
-	}
-
     void Spawn()
     {
         // If the player has no health left...
@@ -34,6 +29,6 @@ public class PokemonManager : MonoBehaviour {
 
         // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
         Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-        spawnAudio.Play();
+        spawnAudio.Play(); //play the zombie spawn sound
     }
 }

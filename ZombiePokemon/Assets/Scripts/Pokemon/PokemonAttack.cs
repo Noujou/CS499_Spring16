@@ -7,7 +7,7 @@ public class PokemonAttack : MonoBehaviour {
     public int attackDamage = 10;               // The amount of health taken away per attack.
 
     GameObject player;                          // Reference to the player GameObject.
-    PlayerShooting shotValue;
+    PlayerShooting shotValue;                   // Reference to how much damage shots do to the pokemon
     PlayerHealth playerHealth;                  // Reference to the player's health.
     PokemonHealth pokemonHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
@@ -26,17 +26,16 @@ public class PokemonAttack : MonoBehaviour {
     //So, I just went with it
     void OnTriggerEnter(Collider other)
     {
-        // If the entering collider is the player...
-        Debug.Log("other's gameobject is: " + other.name);
+        // If the collider's tag is "Bullet"
         if (other.gameObject.tag.Equals("Bullet"))
         {
-            pokemonHealth.TakeDamage(shotValue.shotDamage);
-            Destroy(other.gameObject);
+            pokemonHealth.TakeDamage(shotValue.shotDamage); //then deal damage to the pokemon zombie
+            Destroy(other.gameObject); //and destory the bullet projectile.
         }
 
-        if (other.gameObject == player)
+        if (other.gameObject == player) //if the collider's gameobject is the players
         {
-            // ... the player is in range.
+            // then the player is in range, and proceed to gnaw his face off.
             playerInRange = true;
         }
     }

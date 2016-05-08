@@ -6,7 +6,7 @@ public class PokemonMovement : MonoBehaviour {
     Transform player;               // Reference to the player's position.
     PlayerHealth playerHealth;      // Reference to the player's health.
     PokemonHealth pokemonHealth;        // Reference to this enemy's health.
-    NavMeshAgent nav;
+    NavMeshAgent nav;               // Reference to the navmesh agent
 
     // Use this for initialization
     void Start () {

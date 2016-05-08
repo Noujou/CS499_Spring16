@@ -2,31 +2,31 @@
 
 public class PlayerHealth : MonoBehaviour {
 
-    public int startingHealth = 100;
-    public int currentHealth = 0;
+    public int startingHealth = 100; //starting health variable for the player
+    public int currentHealth = 0; //current health variable for the player
 
-    bool isDead;
-    bool damaged;
+    bool isDead; //bool that determines whether the player is alive or dead.
+    bool damaged; //bool that checks to see if the player has been damaged or not
 
 	// Use this for initialization
 	void Start () {
-        currentHealth = startingHealth;
+        currentHealth = startingHealth; //start by setting the current health of the player to the starting health
 	}
 	
     public void TakeDamage(int damage)
     {
-        damaged = true;
+        damaged = true; //since you were damaged, damaged = true
 
-        currentHealth -= damage;
+        currentHealth -= damage; //subtract the damage taken from your current health
 
-        if (currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0 && !isDead) //if current health is now less than or equal to zero and you're currently not dead
         {
-            Death();
+            Death(); //now you are
         }
     }
 
     void Death()
     {
-        isDead = true;
+        isDead = true; //RIP in pepperoni
     }
 }
