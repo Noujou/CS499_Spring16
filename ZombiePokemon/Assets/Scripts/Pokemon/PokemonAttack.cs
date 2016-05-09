@@ -58,8 +58,7 @@ public class PokemonAttack : MonoBehaviour {
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks && playerInRange && pokemonHealth.currentHealth > 0)
         {
-            // ... attack.
-            Debug.Log("Player health is:" + playerHealth.currentHealth);
+            // ... attack
             Attack();
         }
     }
